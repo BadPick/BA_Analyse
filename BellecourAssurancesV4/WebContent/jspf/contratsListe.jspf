@@ -1,0 +1,36 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<table class="table table-striped">
+	<tr>
+		<th>N° de police</th>
+		<th>Assureur</th>
+		<th>Date effet</th>
+		<th>Date résiliation</th>
+		<th>Date échéance</th>
+		<th>Code</th>
+		<th>Libellé</th>
+		<th>Branche</th>
+		<th></th>
+	</tr>
+	<c:forEach var="contrat" items="${contratList}">
+		<tr>
+			<td>${contrat.codeContrat}</td>
+			<td>${contrat.assureur}</td>
+			<td>${contrat.dateEffetString}</td>
+			<td>${contrat.dateResiliationString}</td>
+			<td>${contrat.dateEcheanceString}</td>
+			<td>${contrat.codeProduit}</td>
+			<td>${contrat.libelleProduit}</td>
+			<td>${contrat.brancheProduit}</td>
+			<td>
+				<form action="<%=request.getContextPath()%>/GestionPortefeuilleClients" method="post">
+					<button type="submit" name="typeAction" value="modifierContrat" class="btn btn-default modSup">modifier</button>
+					<button type="submit" name="typeAction" value="supprimer" class="btn btn-default modSup" onclick="return confirm('Voulez vous vraiment supprimer ce contrat')">supprimer</button>
+					<input type="hidden" name="codeContrat" value="${contrat.codeContrat}" /> 
+					<input type="hidden" name="codeClient" value="${client.codeClient}" />
+				</form>
+			</td>
+		</tr>
+	</c:forEach>
+</table>

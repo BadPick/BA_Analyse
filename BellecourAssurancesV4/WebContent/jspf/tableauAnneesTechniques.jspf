@@ -1,0 +1,31 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<div class="col-sm-6">
+<table class="tableauAnneesTechn">
+	<tr>
+	<th colspan="4">Années techniques</th>
+	</tr>
+	<tr>
+
+		<th>N-3</th>
+		<th>N-2</th>
+		<th>N-1</th>
+		<th>N</th>
+	</tr>
+	<tr>
+
+		<td>${requestScope['dateDebutN3']}</td>
+		<td>${requestScope['dateDebutN2']}</td>
+		<td>${requestScope['dateDebutN1']}</td>
+		<td>${requestScope['dateDebutN']}</td>
+	</tr>
+	<tr>
+
+		<td>${requestScope['dateFinN3']}</td>
+		<td>${requestScope['dateFinN2']}</td>
+		<td>${requestScope['dateFinN1']}</td>
+		<td>${requestScope['dateFinN']}</td>
+	</tr>
+</table>
+</div>

@@ -1,0 +1,44 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div class="row">
+	<div class="col-sm-4">
+		<h2>Liste des circonstances :</h2>
+	</div>
+	<div class="col-sm-4">
+	<form action="<%= request.getContextPath() %>/GestionCirconstances">
+					<button type="submit" name="typeAction" value="ajouter" class="btn btn-default option ajout">ajouter une circonstance</button>
+					<input type="hidden" name="codeCirconstance" value="0"/>
+				</form>
+	</div>
+</div>
+
+				<!-- tableau -->
+				
+				<table class="table table-striped">
+					<tr>
+						<th>Code</th>
+						<th>Libellé</th>
+						<th>IDA</th>
+						<th></th>
+					</tr>
+					<c:forEach var="circonstance" items="${circonstanceList}">				
+						<tr>
+							<td>${circonstance.codeCirconstance}</td>
+							<td>${circonstance.libelle}</td>
+							<c:if test="${circonstance.ida==true}">
+							<td>Oui</td>
+							</c:if>
+							<c:if test="${circonstance.ida==false}">
+							<td>Non</td>
+							</c:if>
+							<td>
+								<form action="<%= request.getContextPath() %>/GestionCirconstances" method="post">
+									<button type="submit" name="typeAction" value="modifier" class="btn btn-default modSup">modifier</button>
+									<button type="submit" name="typeAction" value="supprimer" class="btn btn-default modSup" onclick="return confirm('Voulez vous vraiment supprimer cette circonstance')">supprimer</button>
+									<input type="hidden" name="codeCirconstance" value="${circonstance.codeCirconstance}"/>
+								</form>
+							</td>
+						</tr>							
+					</c:forEach>
+				</table>
+				

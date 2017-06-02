@@ -1,0 +1,45 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+		<h2>Liste des sinistres :</h2>
+
+				<!-- tableau -->
+				
+				<table class="table table-striped">
+					<tr>
+						<th>Ref</th>
+						<th>Date</th>
+						<th>Heure</th>
+						<th>Taux resp.</th>
+						<th>Code circ.</th>
+						<th>Code nat.</th>
+						<th>Mat/Corp</th>
+						<th>Etat</th>
+						<th>Coût</th>
+						<th>Salarié</th>
+						<th></th>
+					</tr>
+					<c:forEach var="sinistre" items="${sinistreList}">				
+						<tr>
+							<td>${sinistre.codeSinistre}</td>
+							<td>${sinistre.dateSurvenanceString}</td>							
+							<td>${sinistre.heureSurvenance}</td>							
+							<td>${sinistre.tauxResponsabilite}</td>
+							<td>${sinistre.circonstance.codeCirconstance}</td>
+							<td>${sinistre.nature.codeNature}</td>
+							<td>${sinistre.typeDommage}</td>
+							<td>${sinistre.etat}</td>
+							<td>${sinistre.coutSinistre}</td>
+							<td>${sinistre.nomSalarie}</td>
+
+							<td>
+								<form action="<%= request.getContextPath() %>/GestionSinistres" method="post">
+									<button type="submit" name="typeAction" value="validerSinistre" class="btn btn-default modSup">modifier</button>
+									<button type="submit" name="typeAction" value="supprimer" class="btn btn-default modSup" onclick="return confirm('Voulez vous vraiment supprimer ce sinistre')">supprimer</button>
+									<input type="hidden" name="codeSinistre" value="${sinistre.codeSinistre}"/>
+								</form>
+							</td>
+						</tr>							
+					</c:forEach>
+				</table>
+				

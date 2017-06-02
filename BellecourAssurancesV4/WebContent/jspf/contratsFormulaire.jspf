@@ -1,0 +1,68 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contratModif" value="${requestScope['contratModif']}" scope="page" />
+
+<h2>Ajout/modification du contrat :</h2>
+
+<form action="<%= request.getContextPath() %>/GestionPortefeuilleClients" method="post">	
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputCode">Code :</label>
+		<input type="text" name="codeClient" id="inputCode"  value="${contratModif.codeContrat }" class="form-control" autocomplete="off" disabled>
+	</div>
+</div>
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputAssureur">Assureur :</label>
+		<input type="text" name="assureur" title="compagnie d'assurance" id="inputAssureur" value="${contratModif.assureur }" class="form-control" autocomplete="off" placeholder="Assureur..." required>
+	</div>
+</div>
+
+<div class="row">  
+     <div class="col-sm-6 col-sm-offset-3">
+		<label for="inputCodeProduit">Code produit :</label>
+		<input type="text" name="codeProduit" title="code produit" id="inputCodeProduit" value="${contratModif.codeProduit }" class="form-control" autocomplete="off" placeholder="Code produit..." required>
+	</div>
+</div>
+
+<div class="row">  
+     <div class="col-sm-6 col-sm-offset-3">
+		<label for="inputdateEffet">Date effet :</label>
+		<input type="text" name="dateEffet" title="date d'effet du contrat" id="inputdateEffet" value="${contratModif.dateEffetString }" class="form-control" autocomplete="off" placeholder="Date d'effet...(jj/mm/aaaa)" required>
+	</div>
+</div>
+
+<div class="row">  
+     <div class="col-sm-6 col-sm-offset-3">
+		<label for="inputEcheance">Date d'échéance :</label>
+		<input type="text" name="echeance" title="date d'échéance du contrat" id="inputEcheance" value="${contratModif.dateEcheance }" class="form-control" autocomplete="off" placeholder="Date d'echeance...(mmjj)" required>
+	</div>
+</div>
+
+<div class="row">  
+     <div class="col-sm-6 col-sm-offset-3">
+		<label for="inputdateResiliation">Date résiliation :</label>
+		<input type="text" name="dateResiliation" title="date de résiliation du contrat" id="inputdateResiliation" value="${contratModif.dateResiliationString }" class="form-control" autocomplete="off" placeholder="Date de résiliation...(jj/mm/aaaa)">
+	</div>
+</div>
+
+
+<div class="btnAnnulerValider">
+	<div class="col-sm-2 col-sm-offset-5">
+			<button class="btn btn-default" type="submit" name="typeAction" value="validerModifContrat">Valider</button>
+			<input type="hidden" name="codeContrat" value="${contratModif.codeContrat }">
+			<input type="hidden" name="codeClient" value="${codeClient}">
+	</div>
+</div>
+
+</form>
+<form action="<%= request.getContextPath() %>/GestionPortefeuilleClients" method="post">	
+<div class="btnAnnulerValider">
+	<div class="col-sm-2">
+		<button class="btn btn-default" type="submit" name="typeAction" value="validerClient">Annuler</button>
+		<input type="hidden" name="codeClient" value="${codeClient}">
+	</div>
+</div>
+</form>

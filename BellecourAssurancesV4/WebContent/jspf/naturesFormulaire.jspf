@@ -1,0 +1,61 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="natureList" value="${requestScope['natureList']}" scope="page" />
+<c:set var="natureAModifier" value="${requestScope['natureAModifier']}" scope="page" />
+
+<h2>Ajout/modification des natures :</h2>
+
+<form action="<%= request.getContextPath() %>/GestionNatures">	
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputCode">Code nature :</label>
+		<c:if test="${natureAModifier != null}">
+			<input type="text" name="codeNature" id="inputCode"  value="${natureAModifier.codeNature }" class="form-control" disabled>
+		</c:if>
+		<c:if test="${natureAModifier == null}">
+			<input type="text" name="codeNature" id="inputCode" class="form-control" autocomplete="off" placeholder="Code nature..." required="" autofocus="">
+		</c:if>
+	</div>
+</div>
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputLibelle">Code analyse :</label>
+		<input type="text" name="codeAnalyse" title="code utilisé pour l'analyse des natures" id="inputcodeAnalyse" value="${natureAModifier.codeAnalyse }" class="form-control" autocomplete="off" placeholder="code analyse...">
+	</div>
+</div>
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputLibelle">Libellé :</label>
+		<input type="text" name="libelle" title="libellé de la nature" id="inputlibelle" value="${natureAModifier.libelle }" class="form-control" autocomplete="off" placeholder="libelle..." required="">
+	</div>
+</div>
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputBranche">Branche :</label>
+		<input type="text" name="branche" title="branche d'analyse : (FLOTTE, RC, DOMMAGE, AUTRE) Il est possible de renseigner plusieurs branche pour une même nature en les séparant par des / " id="inputBranche" value="${natureAModifier.branche }" class="form-control" autocomplete="off" placeholder="branche..." >
+	</div>
+</div>
+
+<div class="btnAnnulerValider">
+	<div class="col-sm-2 col-sm-offset-5">
+		<c:if test="${natureAModifier != null}">
+			<button class="btn btn-default" type="submit" name="typeAction" value="validerModif">Valider</button>
+			<input type="hidden" name="codeNature" value="${natureAModifier.codeNature }" >
+		</c:if>
+		<c:if test="${natureAModifier == null}">
+			<button class="btn btn-default" type="submit" name="typeAction" value="validerAjout">Valider</button>
+		</c:if>	
+	</div>
+</div>
+</form>
+<form action="<%= request.getContextPath() %>/GestionNatures">	
+<div class="btnAnnulerValider">
+	<div class="col-sm-2">
+		<button class="btn btn-default" type="submit" name="typeAction" value="annuler">Annuler</button>
+	</div>
+</div>
+</form>

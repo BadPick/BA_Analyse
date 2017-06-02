@@ -1,0 +1,633 @@
+@CHARSET "UTF-8";
+
+.zoneArea
+{
+	height: 500px;
+}
+.ajout
+{
+	width: 400px;
+}
+.modSup
+{
+	width: 100px;
+}
+.menuBar button
+{
+	margin-top: 20px;
+	margin-left: 20px;
+	width: 120px;
+	position: fixed;
+	float: left;
+}
+.option
+{
+	vertical-align:middle;
+	margin-top: 20px;
+}
+.legend
+{
+	vertical-align: middle;
+	font-size: 12px;
+	
+}
+.tableauARenseigner
+{
+	margin-top: 30px;
+	border: 1px solid #034381;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
+
+.tableauARenseigner th
+{
+	font-size: 18px;
+	text-align: center;
+	border: 1px solid #034381;
+    border-collapse: collapse;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.tableauARenseigner td
+{
+	border: 1px solid #034381;
+    border-collapse: collapse;
+    padding-top: 10px;  
+    padding-left: 10px;
+    padding-right: 10px; 
+    
+}
+.print-only
+{
+	display: none;
+}
+.centre
+{
+	text-align: center;
+}
+.scrollable-table
+{
+	margin-left: -15px;
+	width: 1500px;
+}
+.table-striped
+{
+	width: 1500px;
+}
+.table-header-rotated
+{
+	width: 1500px;
+}
+.table-header-rotated th.row-header
+{
+  width: auto ;
+}
+.table-header-rotated td{
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-header-rotated th.rotate-45{
+  height: 170px;
+  position: relative;
+  vertical-align: bottom;
+  padding: 0;
+  font-size: 12px;
+  line-height: 0.8;
+}
+
+.table-header-rotated th.rotate-45 > div{
+  position: relative;
+  top: 0px;
+  left: 83px; /* 80 * tan(45) / 2 = 40 where 80 is the height on the cell and 45 is the transform angle*//*ici pour le décalage des bordures*/
+  height: 100%;
+  transform:skew(-45deg,0deg);
+  overflow: hidden;
+  border-left: 1px solid #034381;
+}
+
+.table-header-rotated th.rotate-45 span {
+  transform:skew(45deg,0deg) rotate(315deg);
+  position: absolute;
+  bottom: 35px; /* 40 cos(45) = 28 with an additional 2px margin*/
+  left: -20px; /*Because it looked good, but there is probably a mathematical link here as well*/
+  display: inline-block;
+  width: 85px; /* 80 / cos(45) - 40 cos (45) = 85 where 80 is the height of the cell, 40 the width of the cell and 45 the transform angle*/
+  text-align: left;
+  white-space: nowrap;
+}
+.table-header-rotated th:first-of-type,.table-header-rotated td:first-of-type{
+     text-align:left;   
+}
+
+.table-header-rotated
+{
+	/*display:none;*/
+	/*text-align:center;*/
+	/*table-layout : fixed;*/
+	border: 3px solid #034381;
+    border-collapse: collapse;
+    margin-top:30px;
+	margin-bottom: 40px;
+}
+.table-header-rotated th
+{
+	font-size: 12px;
+	/*text-align: center;*/
+}
+.table-header-rotated td
+{
+	font-size: 12px;
+	text-align: center;
+	border-bottom: 1px solid #034381;
+	border-left: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+	border-top: 1px solid #034381;
+    border-collapse: collapse;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+td.bordGrasGaucheGenerale
+{
+	border-left: 3px solid #034381;
+}
+.bordGrasGaucheGenerale
+{
+	border-left: 3px solid #034381;
+}
+.bordGrasBasGenerale
+{
+	border-bottom: 3px solid #034381;
+}
+.table-header-rotated th.rotate-45 > div.couleur2-1er
+{
+	border-left: 3px solid #034381;
+}
+.table-header-rotated th.rotate-45 > div.couleur3-1er
+{
+	border-left: 3px solid #034381;
+}
+.table-header-rotated th.rotate-45 > div.couleur4-1er
+{
+	border-left: 3px solid #034381;
+}
+.table-header-rotated th.rotate-45 > div.couleur5-1er
+{
+	border-left: 3px solid #034381;
+}
+.col-1
+{
+	width: 4%;
+}
+.col-2
+{
+	width: 2%;
+}
+.col-3
+{
+	width: 4%;
+}
+.col-4
+{
+	width: 4%;
+}
+.col-5
+{
+	width: 6%;
+}
+.col-6
+{
+	width: 6%;
+}
+.col-7
+{
+	width: 3%;
+}
+.col-8
+{
+	width: 3%;
+}
+.col-9
+{
+	width: 3%;
+}
+.col-23
+{
+	width: 10%;
+}
+#columnchartNatureColumn
+{
+	height:400px;
+}
+#columnchartJourCumul
+{
+	height: 500px;
+}
+#columnchartJourCumul2
+{
+	height: 500px;
+}
+#columnchartMoisCumul
+{
+	height: 500px;
+}
+#columnchartHeureCumul
+{
+	height: 340px;
+}
+#columnchartVehicules
+{
+	height: 350px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+#columnchartPrimes
+{
+	height: 350px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.carre
+{
+	margin-right: 18px;
+	width:15px; 
+	height:15px;
+}
+.sousTitreRepresentation
+{
+	color:black;;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.titreRepresentation
+{
+	color:#fa6816;
+	font-size: 30px;
+	margin-bottom: 15px;
+	margin-top: 25px;
+}
+
+
+.nomenclature
+{
+	border: 1px solid #fa6816;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: left;
+	text-indent: 20px;
+	margin-bottom: 10px;
+}
+.nomenclature th
+{
+	color:#034381;
+}
+.nomenclature th.orange
+{
+	color:#fa6816;
+}
+.titreNomenclature
+{
+	color: black;
+	text-align: center;
+	border-bottom: 1px solid #fa6816;
+	border-collapse: collapse;
+}
+.titreNomenclature th
+{
+	text-align: center;
+}
+.orange
+{
+	color:#fa6816;
+}
+.recap
+{
+    height:170px;
+	border-bottom: 2px solid #034381;
+	margin-bottom: 5px;
+}
+#titreTableauRecap
+{
+	text-align: center;
+}
+#titreScreen
+{
+	text-align: center;
+	color:#034381;
+	margin-bottom: 30px;
+}
+.entete
+{
+	display: none;
+}
+.graph
+{
+	height: 220px;
+	width: 100%;
+	overflow: hidden;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+.columnGraphHorizontal
+{
+	height: 600px;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.columnGraph
+{
+	height: 600px;
+	width: 100%;
+	margin-bottom: 20px;
+
+}
+.gaugeGraph
+{
+	height: 130px;
+	width: 100%;
+}
+.premiereLigne
+{
+	color:#fa6816;
+}
+.deuxiemeLigne
+{
+	border-bottom: 3px solid #034381;
+	color:#034381;
+	font-weight: bold;
+}
+
+.bordGrasGauche
+{
+	border-left: 3px solid #034381;
+}
+.bordGrasBas
+{
+	border-bottom: 3px solid #034381;
+}
+.total
+{
+	border-top: 3px solid #034381;
+	color:#fa6816;
+	font-weight: bold;
+}
+.tableauResultat
+{
+	border: 3px solid #034381;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 40px;
+
+}
+.tableauResultat th
+{
+	font-size: 18px;
+	text-align: center;
+	border: 1px solid #034381;
+    border-collapse: collapse;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.tableauResultat td
+{
+	font-size: 18px;
+	text-align: center;
+	border: 1px solid #034381;
+    border-collapse: collapse;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.tableauRecap
+{
+	border: 1px solid #fa6816;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: left;
+}
+
+.tableauRecap th
+{
+	font-size: 18px;
+	text-align: left;
+	border: 1px solid #fa6816;
+    border-collapse: collapse;
+    text-indent: 8px;
+}
+
+.tableauRecap td
+{
+	border: 1px solid #fa6816;
+    border-collapse: collapse;
+    text-indent: 8px;
+}
+.tableauAnneesTechn
+{
+	border: 1px solid #fa6816;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+}
+
+.tableauAnneesTechn th
+{
+	font-size: 18px;
+	text-align: center;
+	border: 1px solid #fa6816;
+    border-collapse: collapse;
+
+}
+
+.tableauAnneesTechn td
+{
+	border: 1px solid #fa6816;
+    border-collapse: collapse;
+    padding-bottom: 2px;
+    padding-top: 1px;
+}
+
+#btnLancerAnalyse
+{
+	margin-top: 40px;
+	width: 100%;
+}
+
+.labelTexte
+{
+	font-size: 20px;
+	padding-bottom: 20px;
+}
+.clientChoisi
+{
+	border: 1px solid #fa6816;
+	padding: 20px;
+	font-size: 25px;
+}
+.clientChoisi button
+{
+	width: 150px;
+}
+.recherche
+{
+	border-bottom: 1px solid #034381;
+	padding-left: 20px;
+	padding-right:20px;
+	padding-bottom:20px;
+	margin-bottom: 50px;
+}
+
+.contenuBlockDonnees div
+{
+	font-size: 18px;
+}
+
+.contenuBlockDonnees
+{
+	padding: 20px;
+}
+.titreSection
+{
+	font-size: 22px;
+}
+
+.blockDonnees
+{
+	border-top: 1px solid #CCC;
+	padding: 15px;
+}
+
+th
+{
+	font-size: 22px;
+}
+.ecrireGras
+{
+	font-weight: bold;
+}
+
+.message
+{	
+	margin: 20px;
+}
+
+.message div
+{
+	margin: 0px;
+	vertical-align: middle;
+	font-size: 18px;
+	font-style: italic;
+	color: #034381;
+}
+
+.details
+{
+	margin: 0px;
+	vertical-align: middle;
+	font-size: 14px;
+	font-style: italic;
+	color: red;
+}
+
+.form-control
+{
+	margin-bottom: 10px;
+	border-color: #fa6816;
+}
+
+.btn-default
+{
+	background-color: #034381;
+	color: #fff;
+}
+
+.btn-default:HOVER
+{
+	background-color: #16b4ef;
+}
+
+.btnAnnulerValider button
+{
+	margin-top: 20px;
+	margin-left: 0px;
+	width: 100%;
+}
+.userName
+{
+	color: #fff;
+}
+
+.header
+{
+	background-color: #034381;
+	height: 170px;
+}
+
+.navbar-inverse 
+{
+    background-color: #034381;
+    border-color: #034381;
+}
+
+.navbar-nav
+{
+	font-size: 22px;
+	font-weight: bold;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover 
+{
+    color: #16b4ef;
+    text-decoration:underline;
+    background-color: #034381;    
+}
+
+.menuItem
+{
+	vertical-align: middle;
+	height: 30px;
+	margin-right:25px;
+	color: #fff;
+}
+.menuItem p
+{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+.menuItem:HOVER 
+{
+	color: #16b4ef;
+}
+.navbar-right
+{
+	margin-top: 20px;
+}
+.logo
+{
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+h2
+{
+	/*margin-bottom: 15px;
+	margin-top: 50px;*/
+	color: #034381;
+	font-weight: bold;
+}
+.orangeBleu
+{
+	color: #034381;
+}
+#btn-connexion
+{
+	border-color: #034381;
+}
+
+.hidden{
+	display: none;
+}

@@ -1,0 +1,411 @@
+@CHARSET "UTF-8";
+
+
+@media print 
+{
+
+.couleur1{background-color: #6894F0!important;}
+.couleur2{background-color: #B0D8E8!important;	-webkit-print-color-adjust: exact;}
+.couleur3{background-color: #16b4ef!important;}
+.couleur4{background-color: #9800D8!important;}
+.couleur5{background-color: #6894F0!important;}
+.menuBar
+{
+	display: none;
+}
+.legend
+{
+	font-size: 12pt;	
+}
+.sommaire
+{
+	margin-top: 70pt;
+	width: 100%!important;
+}
+.print-only
+{
+	display: block;
+}
+.sousTitreRepresentation
+{
+	margin-top:10pt;
+	margin-bottom:10pt;
+	font-size: 18pt!important;
+	page-break-after: avoid!important;
+}
+.table-other
+{
+	width: 100%;
+}
+.table-header-rotated th.rotate-45 > div.couleur2-1er
+{
+	border-left: 4px solid #034381
+}
+.table-header-rotated th.rotate-45 > div.couleur3-1er
+{
+	border-left: 4px solid #034381
+}
+.table-header-rotated th.rotate-45 > div.couleur4-1er
+{
+	border-left: 4px solid #034381
+}
+.table-header-rotated th.rotate-45 > div.couleur5-1er
+{
+	border-left: 4px solid #034381
+}
+.table-header-rotated th.rotate-45 > div.couleur6-1er
+{
+	border-left: 4px solid #034381
+}
+.table-header-rotated
+{
+	width: 100%!important;
+}
+.scrollable-table
+{
+	width: 100%!important;
+}
+.table-striped
+{
+	width: 100%!important;
+}
+.col-1
+{
+	width: 4%;
+}
+.col-2
+{
+	width: 3%;
+}
+.col-3
+{
+	width: 4%;
+}
+.col-4
+{
+	width: 5%;
+}
+.col-5
+{
+	width: 6%;
+}
+.col-6
+{
+	width: 6%;
+}
+.col-7
+{
+	width: 3%;
+}
+.col-8
+{
+	width: 3%;
+}
+.col-9
+{
+	width: 3%;
+}
+.col-23
+{
+	width: 11%;
+}	
+.container
+{
+	width: 100%!important;
+
+}
+.blockAnalyse
+{
+	width: 100%!important;
+}
+.row
+{
+	width: 100%!important;
+	margin: opt!important;
+}
+.graph
+{
+	margin-bottom: 10pt;
+}
+.columnGraphHorizontal
+{
+	margin-bottom: 10pt;
+}
+.gaugeGraph
+{
+	margin-bottom: 20pt;
+}
+.columnGraph
+{
+	margin-bottom: 10pt;
+
+}
+.bordGrasGauche
+{
+	border-left: 3px solid #034381;
+}
+.carre
+{
+	margin-right: 8pt;
+	width:8pt; 
+	height:8pt;
+}
+.titreRepresentation
+{
+	color:#fa6816!important;
+	font-size: 24pt !important;
+	margin-bottom: 15pt;
+	font-weight: bold;
+}
+.orange
+{
+	color:#fa6816 !important;
+}
+.nomenclature
+{
+	border: 3px solid #034381;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: left;
+	text-indent: 10pt;
+	font-size: 16pt!important;
+}
+.titreNomenclature
+{
+	text-align: center!important;
+	font-size: 14pt;
+	font-weight: bold;
+}
+.nomenclature th
+{
+	text-align: left;
+	text-indent: 12pt;
+	font-size: 16pt!important;
+	font-weight: bold;
+	color:black!important;
+}
+.nomenclature td
+{
+	text-align: left;
+	text-indent: 12pt;
+	font-size: 12pt!important;
+}
+.titreNomenclature th
+{
+	border-bottom: 3px solid #034381!important;
+	border-collapse: collapse;
+	text-align: center;
+	color:#034381!important;
+	padding: 5pt;
+}
+
+.nomenclature th.orange
+{
+	color:#fa6816!important;
+}
+
+#titreScreen
+{
+	display: none;
+}
+#titreRecap
+{
+	font-size: 26pt;
+	font-weight: bold;
+	border: 1px solid #034381!important;
+	text-align: center;
+}
+.titreSommaire
+{
+	font-size: 26pt!important;
+	font-weight: bold!important;
+	border: 1px solid #034381!important;
+	text-align: center!important;
+	margin-top: 100px;
+}
+.entete
+{
+	display: block;
+	margin-bottom: 15px;
+}
+.recap
+{
+    height:250px;
+	border-bottom: 2px solid #fa6816!important;
+	margin-bottom: 20px;
+}
+
+.newpage
+{
+	  page-break-before: always!important; /* commence sur une nouvelle page */
+}
+.premiereLigne th
+{
+	color:#fa6816!important;
+}
+.deuxiemeLigne
+{
+	border-bottom: 3px solid #034381;	
+}
+.deuxiemeLigne th
+{
+	color:#034381!important;
+	font-weight: bold;
+}
+.bordGrasGauche
+{
+	border-left: 3px solid #034381;
+}
+.total
+{
+	border-top: 3px solid #034381;
+}
+.total td
+{
+	color:#fa6816 !important;
+	font-weight: bold;
+}
+
+.tableauResultat
+{
+	border: 3px solid #034381;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	margin-bottom: 10pt;
+}
+.tableauResultat th
+{
+	font-size: 14pt;
+	text-align: center;
+	border-left: 1px solid #CCC!important;
+	border-right: 1px solid #CCC!important;
+	border-bottom:1px solid #034381!important;
+	border-top:1px solid #034381!important;
+    border-collapse: collapse;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.tableauResultat td
+{
+	font-size: 14pt;
+	text-align: center;
+	border-left: 1px solid #CCC!important;
+	border-right: 1px solid #CCC!important;
+	border-bottom:1px solid #034381!important;
+	border-top:1px solid #034381!important;
+    border-collapse: collapse;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.ecrireGras td
+{
+	font-weight: bold!important;
+	border-left: 1px solid #CCC!important;
+	border-right: 1px solid #CCC!important;
+	border-bottom:1px solid #034381!important;
+	border-top:1px solid #034381!important;
+}
+.tableauAnneesTechn
+{
+	border: 1px solid #034381;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: center;
+	font-size: 14pt;
+	clear: right;
+}
+
+.tableauAnneesTechn th
+{
+	font-size: 14pt;
+	border: 1px solid #034381;
+    border-collapse: collapse;
+}
+
+.tableauAnneesTechn td
+{
+	font-size: 14pt;
+	border: 1px solid #034381;
+    border-collapse: collapse;
+}	
+.tableauRecap
+{
+	border: 1px solid #034381;
+    border-collapse: collapse;
+	width: 100%;
+	text-align: left;
+	font-size: 14pt;
+}
+
+.tableauRecap th
+{
+
+	text-align: left;
+	border: 1px solid #034381;
+    border-collapse: collapse;
+    text-indent: 8px;
+    font-size: 14pt;
+}
+
+.tableauRecap td
+{
+	border: 1px solid #034381;
+    border-collapse: collapse;
+    text-indent: 8px;
+    font-size: 14pt;
+}
+
+.header 
+{
+   display:none !important;
+}
+.blockAnalyse
+{
+	page-break-inside: avoid; /* pas de coupure dans ces élements */
+}
+    	
+body 
+{
+	width: auto!important;
+	margin: auto!important;
+	font-family: serif;
+	font-size: 14pt!important;
+	/*background-color: #fff!important;*/
+	/*color: #000!important;*/
+}
+
+.container
+{
+	margin: 0px!important;
+}
+p, blockquote 
+{
+  orphans: 3; /* pas de ligne seule en bas */
+  widows: 3; /* pas de ligne seule en haut */
+}
+
+blockquote, ul, ol 
+{
+  page-break-inside: avoid; /* pas de coupure dans ces élements */
+}
+
+h2 
+{
+  margin-top:10px;
+  margin-bottom: 5px;
+  color:#034381 !important;
+  font-size: 18pt;
+}
+.orangeBleu
+{
+	color: #fa6816!important;
+}
+
+/*h1, h2, h3, caption 
+{
+  page-break-after: avoid;  //pas de saut après ces éléments 
+}*/
+
+}
+

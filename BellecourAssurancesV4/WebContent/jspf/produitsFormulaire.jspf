@@ -1,0 +1,88 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="produitList" value="${requestScope['produitList']}" scope="page" />
+<c:set var="produitAModifier" value="${requestScope['produitAModifier']}" scope="page" />
+
+<h2>Ajout/modification du produit :</h2>
+
+<form action="<%= request.getContextPath() %>/GestionProduits">	
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputCode">Code :</label>
+		<c:if test="${produitAModifier != null}">
+			<input type="text" name="codeProduit" id="inputCode"  value="${produitAModifier.codeProduit }" class="form-control" disabled>
+		</c:if>
+		<c:if test="${produitAModifier == null}">
+			<input type="text" name="codeProduit" id="inputCode" class="form-control" autocomplete="off" placeholder="Code produit..." required="" autofocus="">
+		</c:if>
+	</div>
+</div>
+
+<div class="row">  
+	<div class="col-sm-6 col-sm-offset-3"> 
+		<label for="inputLibelle">Libellé :</label>
+		<input type="text" name="libelle" title="libellé du produit" id="inputLibelle" value="${produitAModifier.libelle }" class="form-control" autocomplete="off" placeholder="Libellé..." required="">
+	</div>
+</div>
+
+<div class="row">  
+     <div class="col-sm-6 col-sm-offset-3">
+		<label for="inputBranche">Branche :</label>
+		<select class="form-control" name="branche" id="ida"  title="branche d'analyse (ATTENTION ! : Flotte automobile ou Dommage ou RC ou Autres)" id="inputBranche" class="form-control">
+				<c:if test="${produitAModifier.branche == 'Flotte automobile'}">
+					<option  value="Flotte automobile" selected>Flotte automobile</option>											
+				</c:if>
+				<c:if test="${produitAModifier.branche != 'Flotte automobile'}">
+					<option  value="Flotte automobile">Flotte automobile</option>											
+				</c:if>
+				
+				<c:if test="${produitAModifier.branche == 'Dommage'}">
+					<option  value="Dommage" selected>Dommage</option>											
+				</c:if>
+				<c:if test="${produitAModifier.branche != 'Dommage'}">
+					<option  value="Dommage">Dommage</option>											
+				</c:if>
+				
+				<c:if test="${produitAModifier.branche == 'RC'}">
+					<option  value="RC" selected>RC</option>											
+				</c:if>
+				<c:if test="${produitAModifier.branche != 'RC'}">
+					<option  value="RC">RC</option>											
+				</c:if>
+				
+				<c:if test="${produitAModifier.branche == 'Autres'}">
+					<option  value="Autres" selected>Autres</option>											
+				</c:if>
+				<c:if test="${produitAModifier.branche != 'Autres'}">
+					<option  value="Autres">Autres</option>											
+				</c:if>
+				
+				<c:if test="${produitAModifier.branche != 'Flotte automobile' && produitAModifier.branche != 'RC' && produitAModifier.branche != 'Dommage' && produitAModifier.branche != 'Autres'}">
+					<option  selected>INCONNU</option>											
+				</c:if>
+				
+		</select>
+	</div>
+</div>
+
+
+<div class="btnAnnulerValider">
+	<div class="col-sm-2 col-sm-offset-5">
+		<c:if test="${produitAModifier != null}">
+			<button class="btn btn-default" type="submit" name="typeAction" value="validerModif">Valider</button>
+			<input type="hidden" name="codeProduit" value="${produitAModifier.codeProduit }" >
+		</c:if>
+		<c:if test="${produitAModifier == null}">
+			<button class="btn btn-default" type="submit" name="typeAction" value="validerAjout">Valider</button>
+		</c:if>	
+	</div>
+</div>
+</form>
+<form action="<%= request.getContextPath() %>/GestionProduits">	
+<div class="btnAnnulerValider">
+	<div class="col-sm-2">
+		<button class="btn btn-default" type="submit" name="typeAction" value="annuler">Annuler</button>
+	</div>
+</div>
+</form>

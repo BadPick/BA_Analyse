@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+				<!-- tableau -->
+				<table class="table table-striped">
+					<tr>
+						<th>N° de police</th>
+						<th>Assureur</th>
+						<th>Date effet</th>
+						<th>Code</th>
+						<th>Libellé</th>
+						<th>Branche</th>
+						<th></th>
+					</tr>
+					<c:forEach var="contrat" items="${contratList}">				
+						<tr>
+							<td>${contrat.codeContrat}</td>
+							<td>${contrat.assureur}</td>
+							<td>${contrat.dateEffetString}</td>
+							<td>${contrat.codeProduit}</td>
+							<td>${contrat.libelleProduit}</td>
+							<td>${contrat.brancheProduit}</td>
+							<td>							
+								<input type="checkbox" class="checkBox" name="contrat_${contrat.codeContrat}" value="${contrat.brancheProduit}" >							
+							</td>
+						</tr>							
+					</c:forEach>
+				</table>

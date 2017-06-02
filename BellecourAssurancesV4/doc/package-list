@@ -1,0 +1,9 @@
+fr.bellecour.statistiques.bo
+fr.bellecour.statistiques.dao
+fr.bellecour.statistiques.servlet
+fr.bellecour.statistiques.servlet.ajax
+fr.bellecour.statistiques.servlet.analyse
+fr.bellecour.statistiques.servlet.donnees
+fr.bellecour.statistiques.servlet.utilisateurs
+fr.bellecour.statistiques.settings
+fr.bellecour.statistiques.util

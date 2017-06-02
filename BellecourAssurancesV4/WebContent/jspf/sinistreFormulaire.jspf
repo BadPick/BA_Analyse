@@ -1,0 +1,102 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="sinistreModif" value="${requestScope['sinistreAAfficher']}" scope="page" />
+
+<h2>Ajout/modification du sinistre :</h2>
+
+<form action="<%= request.getContextPath() %>/GestionSinistres" method="post">	
+
+<div class="row"> 
+ 
+	<div class="col-sm-4"> 
+		<label for="inputCode">Code sinistre :</label>
+		<input type="text" name="codeSinistre" id="inputCode"  value="${sinistreModif.codeSinistre }" class="form-control" autocomplete="off" disabled>
+		<label for="inputCode">Code contrat:</label>
+		<input type="text" name="codeContrat" id="inputCode"  value="${sinistreModif.codeContrat }" class="form-control" autocomplete="off" placeholder="Code contrat..." required>
+		<label for="inputCode">Date de survenance :</label>
+		<input type="text" name="dateSurvenance" id="inputCode"  value="${sinistreModif.dateSurvenanceString }" class="form-control" autocomplete="off" placeholder="Date de survenance..." required>
+		<label for="inputCode">Heure de survenance :</label>
+		<input type="text" name="heureSurvenance" id="inputCode"  value="${sinistreModif.heureSurvenance }" class="form-control" autocomplete="off" placeholder="Heure de survenance...">
+		<label for="inputCode">Immatriculation :</label>
+		<input type="text" name="heureSurvenance" id="inputCode"  value="${sinistreModif.immatriculation }" class="form-control" autocomplete="off" placeholder="Immatriculation...">
+		<label for="inputCode">Nom salarié :</label>
+		<input type="text" name="nomSalarie" id="inputCode"  value="${sinistreModif.nomSalarie }" class="form-control" autocomplete="off" placeholder="Nom salarié...">
+		<label for="inputCode">Nom tiers (ou destinataire) :</label>
+		<input type="text" name="nomTiers" id="inputCode"  value="${sinistreModif.nomTiers }" class="form-control" autocomplete="off" placeholder="Nom tiers...">
+		<label for="inputCode">Taux de responsabilité :</label>
+		<input type="text" name="tauxResponsabilite" id="inputCode"  value="${sinistreModif.tauxResponsabilite }" class="form-control" autocomplete="off" placeholder="Taux responsabilité..." required>
+		<label for="inputCode">Code circonsatnce :</label>
+		<input type="text" name="codeCirconstance" id="inputCode"  value="${sinistreModif.circonstance.codeCirconstance }" class="form-control" autocomplete="off" placeholder="Code circonsatnce...">
+		<label for="inputCode">Code nature :</label>
+		<input type="text" name="codeNature" id="inputCode"  value="${sinistreModif.nature.codeNature }" class="form-control" autocomplete="off" placeholder="Code nature..." required>
+		
+		
+		<label for="inputCode">Type de dommage :</label>
+		<input type="text" name="typeDommage" id="inputCode"  value="${sinistreModif.typeDommage }" class="form-control" autocomplete="off" placeholder="Type de dommage...">
+		<label for="inputCode">Coût sinistre :</label>
+		<input type="text" name="coutSinistre" id="inputCode"  value="${sinistreModif.coutSinistre }" class="form-control" autocomplete="off" disabled>
+		<label for="inputCode">Etat :</label>
+		<input type="text" name="etat" id="inputCode"  value="${sinistreModif.etat }" class="form-control" autocomplete="off" placeholder="Etat..." >
+		
+	</div>
+	
+	<div class="col-sm-8">
+	<div class="col-sm-6"> 
+		<label for="inputCode">Tiers règlement mat. :</label>
+		<input type="text" name="tiersReglementMat" id="inputCode"  value="${sinistreModif.tiersReglementMat }" class="form-control" autocomplete="off" placeholder="Règlement matériel..." required>
+		<label for="inputCode">Tiers règlement corp. :</label>
+		<input type="text" name="tiersReglementCorp" id="inputCode"  value="${sinistreModif.tiersReglementCorp }" class="form-control" autocomplete="off" placeholder="Règlement corporel..." required>
+		<label for="inputCode">Tiers règlement mat. + corp. :</label>
+		<input type="text" id="inputCode"  value="${sinistreModif.tiersReglementMatCorp }" class="form-control" autocomplete="off" disabled>
+		<label for="inputCode">Tiers provisions :</label>
+		<input type="text" name="tiersProvisions" id="inputCode"  value="${sinistreModif.tiersProvisions }" class="form-control" autocomplete="off" placeholder="Provisions..." required>
+		<label for="inputCode">Tiers recours :</label>
+		<input type="text" name="tiersRecours" id="inputCode"  value="${sinistreModif.tiersRecours }" class="form-control" autocomplete="off" placeholder="Recours..." required>
+		<label for="inputCode">Tiers coût :</label>
+		<input type="text" id="inputCode"  value="${sinistreModif.tiersCout }" class="form-control" autocomplete="off" disabled>
+	</div>
+	
+	<div class="col-sm-6"> 
+		<label for="inputCode">Assuré règlement mat. :</label>
+		<input type="text" name="assureReglementMat" id="inputCode"  value="${sinistreModif.assureReglementMat }" class="form-control" autocomplete="off" placeholder="Règlement matériel..." required>
+		<label for="inputCode">Assuré règlement corp. :</label>
+		<input type="text" name="assureReglementCorp" id="inputCode"  value="${sinistreModif.assureReglementCorp }" class="form-control" autocomplete="off" placeholder="Règlement corporel..." required>
+		<label for="inputCode">Assuré règlement mat. + corp. :</label>
+		<input type="text" id="inputCode"  value="${sinistreModif.assureReglementMatCorp }" class="form-control" autocomplete="off" disabled>
+		<label for="inputCode">Assuré provisions :</label>
+		<input type="text" name="assureProvisions" id="inputCode"  value="${sinistreModif.assureProvisions }" class="form-control" autocomplete="off" placeholder="Provisions..." required>
+		<label for="inputCode">Assuré franchise :</label>
+		<input type="text" name="assureFranchise" id="inputCode"  value="${sinistreModif.assureFranchise }" class="form-control" autocomplete="off" placeholder="Franchise..." required>
+		<label for="inputCode">Assuré coût :</label>
+		<input type="text" id="inputCode"  value="${sinistreModif.assureCout }" class="form-control" autocomplete="off" disabled>
+	</div>
+	
+	<div class="col-sm-12"> 
+		<label for="inputCode">Observations :</label>
+		<textarea name="observation" rows="11" id="inputCode" class="form-control" placeholder="Observations...">${sinistreModif.observation }</textarea>
+	</div>
+	<div class="col-sm-12"> 
+		<label for="inputCode">Description des dommages :</label>
+		<textarea name="natureDommage" rows="8" id="inputCode" class="form-control" placeholder="Description des dommages...">${sinistreModif.natureDommage }</textarea>
+	</div>
+	</div>
+	
+</div>
+
+
+<div class="btnAnnulerValider">
+	<div class="col-sm-2 col-sm-offset-5">
+			<button class="btn btn-default" type="submit" name="typeAction" value="validerModif">Valider</button>
+			<input type="hidden" name="codeSinistre" value="${sinistreModif.codeSinistre }">
+	</div>
+</div>
+
+</form>
+<form action="<%= request.getContextPath() %>/GestionSinistres" method="post">	
+<div class="btnAnnulerValider">
+	<div class="col-sm-2">
+		<button class="btn btn-default" type="submit" name="typeAction" value="gererSinistres">Annuler</button>
+		<input type="hidden" name="codeSinistre" value="${sinistreModif.codeSinistre }">
+	</div>
+</div>
+</form>
