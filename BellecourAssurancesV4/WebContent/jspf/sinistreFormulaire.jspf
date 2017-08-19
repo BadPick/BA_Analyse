@@ -85,8 +85,14 @@
 
 
 <div class="btnAnnulerValider">
-	<div class="col-sm-2 col-sm-offset-5">
+	<div class="col-sm-2 col-sm-offset-3">
 			<button class="btn btn-default" type="submit" name="typeAction" value="validerModif">Valider</button>
+			<input type="hidden" name="codeSinistre" value="${sinistreModif.codeSinistre }">
+	</div>
+</div>
+<div class="btnAnnulerValider">
+	<div class="col-sm-2">
+			<button class="btn btn-danger" type="submit" name="typeAction" value="supprimer">Supprimer</button>
 			<input type="hidden" name="codeSinistre" value="${sinistreModif.codeSinistre }">
 	</div>
 </div>

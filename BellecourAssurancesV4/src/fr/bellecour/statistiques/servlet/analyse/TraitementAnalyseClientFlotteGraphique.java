@@ -219,15 +219,17 @@ public class TraitementAnalyseClientFlotteGraphique extends HttpServlet
 								.getSinistresPourAnalyse(entry.getKey(), dateDebut, dateFin);
 						ajouterALaListe(listeSinistresCroisees);
 						contratAAnalyser = ContratDao.getById(entry.getKey());
-						if (request.getParameter("dateEcheanceAdded")!=null) {
+						if (request.getParameter("dateEcheanceAdded")!= null) {
 							listeAnneesTecn = DateHelper.getAnneesTechniques(convertDateEcheanceAdded(request.getParameter("dateEcheanceAdded")));
+							System.out.println(listeAnneesTecn);
 						}else{
+							System.out.println("pas pris en compte");
 							listeAnneesTecn = DateHelper.getAnneesTechniques(contratAAnalyser.getDateEcheance());
 						}
 						
 					}
 					croisee = true;
-					recapFlotte = getRecap(listeCodeContratAAnalyser, periodeAnalyse, clientAAnalyser);
+					recapFlotte = getRecap(listeCodeContratAAnalyser, periodeAnalyse, clientAAnalyser, request.getParameter("dateEcheanceAdded"));
 					for (Entry<String, String> entry : listeAnneesTecn.entrySet())
 					{
 						request.setAttribute(entry.getKey(), entry.getValue());
@@ -2347,7 +2349,7 @@ public class TraitementAnalyseClientFlotteGraphique extends HttpServlet
 	}
 
 	private String[] getRecap(HashMap<String, String> listeCodeContratAAnalyser, String periodeAnalyse,
-			Client clientAAnalyser) throws ParseException
+			Client clientAAnalyser, String dateEcheance) throws ParseException
 	{
 		String[] recap = new String[5];
 		Contrat contrat = null;
@@ -2374,8 +2376,15 @@ public class TraitementAnalyseClientFlotteGraphique extends HttpServlet
 				recap[1] += " / " + contrat.getAssureur() + " - n°" + contrat.getCodeContrat();
 			}
 			
-			// date effet
-			recap[2] = contrat.getDateEcheanceString();
+			// date échéance
+			if (dateEcheance != null) {
+				SimpleDateFormat sdfin = new SimpleDateFormat("dd/MM");
+				SimpleDateFormat sdfOut = new SimpleDateFormat("dd-MMMM");
+				recap[2] = sdfOut.format(sdfin.parse(dateEcheance));
+			}else{
+				recap[2] = contrat.getDateEcheanceString();
+			}
+			
 
 			// période analyse
 			recap[3] = periodeAnalyse;

@@ -230,7 +230,7 @@
 							</div>		
 							<div class="col-sm-4">
 								<input type="text" name="dateEcheanceAdded" class="form-control"
-									placeholder="jj/mm" autocomplete="off" required>
+									placeholder="jj/mm" autocomplete="off" required disabled>
 							</div>
 							</div>
 							<div class="col-sm-8">
@@ -278,6 +278,37 @@
 						$('#echeanceAdded').removeClass('hidden');					
 					}
 					lastId = $(this).attr('id');
+				}
+				
+			})
+			$('input[name=dateDebut]').focusout(function(){
+				if ($(this).val().length == 10) {
+					var values = $(this).val().split("/");
+					if (values.length == 1) {
+						values = $(this).val().split("-");
+					}
+					var dateEcheance;
+					if (values[0].length == 4) {
+						//EN date format
+						dateEcheance = values[2] + '/' + values[1];
+					}else{
+						//FR date format
+						dateEcheance = values[0] + '/' + values[1];
+					}
+					$('input[name=dateEcheanceAdded]').val(dateEcheance);
+					$('input[name=dateEcheanceAdded]').attr('value',dateEcheance);
+				}else{
+					$('input[name=dateEcheanceAdded]').val('');
+					$('input[name=dateEcheanceAdded]').attr('value','');
+				}
+				
+			})
+			$('#btnLancerAnalyse').click(function(){
+				if ($('.hidden').length > 0) {
+					$('input[name=dateEcheanceAdded]').val(null);
+					$('input[name=dateEcheanceAdded]').attr('value',null);
+				}else{
+					$('input[name=dateEcheanceAdded]').prop('disabled', false);
 				}
 				
 			})

@@ -95,7 +95,12 @@ public class RechercheBox extends HttpServlet
 		String monObjetJson = listToJson(liste);
 		
 		//Authorise la reponse
-		response.setHeader("Access-Control-Allow-Origin", "*");
+		//response.setHeader("Access-Control-Allow-Origin", "*");
+		response.addHeader("Access-Control-Allow-Origin", "http://192.168.100.200:8080");
+        response.addHeader("Access-Control-Allow-Methods", "POST");
+        response.addHeader("Access-Control-Allow-Headers", "X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept");
+        response.addHeader("Access-Control-Max-Age", "1728000");
+		
 		
 		
 		//renvoi de l'objet Json dans la réponse

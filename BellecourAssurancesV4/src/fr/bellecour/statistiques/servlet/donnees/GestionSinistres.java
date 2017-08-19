@@ -96,7 +96,37 @@ public class GestionSinistres extends HttpServlet
 					}
 					rd = getServletContext().getRequestDispatcher("/jsp/sinistresGestion.jsp");
 					break;
-				
+					
+				case "supprimer":
+					if (request.getParameter("codeSinistre") != null)
+					{
+						int updateOk;
+						try
+						{
+							sinistreAAfficher = recuperationSinistre(request);
+							updateOk = SinistreDao.delete(sinistreAAfficher.getCodeSinistre());
+							if (updateOk>0)
+							{
+								message = "succès de la suppression du sinistre";
+							}
+							else
+							{
+								message = "echec de la suppression du sinistre, ";
+							}
+							rd = getServletContext().getRequestDispatcher("/jsp/sinistresGestion.jsp");
+						} 
+						catch (Exception e)
+						{
+							detailMessage = e.getMessage();
+							message = "echec de la modification du sinistre, ";
+							message += ErrorHelper.traitementDuMessageDErreur(e);
+						}
+
+					}
+					affichage = "liste";					
+					
+					break;	
+					
 				case "validerContrat":
 					affichage = "liste";
 					if (request.getParameter("codeContrat")!=null)

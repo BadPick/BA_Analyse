@@ -191,7 +191,7 @@ public class SinistreDao
 	 * @return int nombre de ligne affectées
 	 * @throws Exception
 	 */
-	private static int delete(String codeSinistre) throws Exception
+	public static int delete(String codeSinistre) throws Exception
 	{
 		int resultat = 0;
 
