@@ -101,7 +101,8 @@
 			</tr>
 			</c:forEach>
 			<tr class="total">
-				<td colspan="9" class="centre">${total[0]}</td>
+				<td colspan="6" class="centre">${total[0]}</td>
+				<td colspan="3" class="bordGrasGaucheGenerale">nombre de 100% : ${total[15]}</td>
 				
 				<td class="bordGrasGaucheGenerale">${total[1]}</td>
 				<td>${total[2]}</td>

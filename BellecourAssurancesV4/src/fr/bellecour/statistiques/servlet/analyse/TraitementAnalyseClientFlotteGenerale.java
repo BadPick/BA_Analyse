@@ -318,7 +318,7 @@ public class TraitementAnalyseClientFlotteGenerale extends HttpServlet
 		String[] ligneTotal = null;
 		if (listeSinistresFlotte != null)
 		{
-			ligneTotal = new String[15];
+			ligneTotal = new String[16];
 			double total1 = 0;
 			double total2 = 0;
 			double total3 = 0;
@@ -332,6 +332,7 @@ public class TraitementAnalyseClientFlotteGenerale extends HttpServlet
 			double total11 = 0;
 			double total12 = 0;
 			double total13 = 0;
+			double total15 = 0;
 			for (Sinistre s : listeSinistresFlotte)
 			{
 				total1 += s.getTiersReglementMat();
@@ -347,6 +348,9 @@ public class TraitementAnalyseClientFlotteGenerale extends HttpServlet
 				total11 += s.getAssureFranchise();
 				total12 += s.getAssureCout();
 				total13 += s.getCoutSinistre();
+				if (s.getTauxResponsabilite()==100) {
+					total15++;
+				}
 
 			}
 			ligneTotal[0] = "TOTAL";
@@ -364,6 +368,7 @@ public class TraitementAnalyseClientFlotteGenerale extends HttpServlet
 			ligneTotal[12] = doubleFormateurArrondi(total12);
 			ligneTotal[13] = doubleFormateurArrondi(total13);
 			ligneTotal[14] = "";
+			ligneTotal[15] = doubleFormateurArrondi(total15);
 		}
 
 		return ligneTotal;
